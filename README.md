@@ -1,5 +1,4 @@
 <center><h2>Obsidian Full Calendar Plugin 汉化</h2></center>
-___
 
 ### 原项目地址
 这个项目包含了来自 [Obsidian Full Calendar Plugin](https://github.com/davish/obsidian-full-calendar) 的代码，遵循 MIT 许可。
