@@ -24943,7 +24943,7 @@ var require_react_dom_development = __commonJS({
             if (didWarnAboutUnmockedScheduler === false && Scheduler.unstable_flushAllWithoutAsserting === void 0) {
               if (fiber.mode & BlockingMode || fiber.mode & ConcurrentMode) {
                 didWarnAboutUnmockedScheduler = true;
-                error(`In Concurrent or Sync modes, the "scheduler" module needs to be mocked to guarantee consistent behaviour across tests and browsers. For example, with jest:
+                error(`In Concurrent or Sync modes, the "scheduler" module needs to be mocked to guarantee consistent behaviour across tests and browsers. For example, with jest: 
 jest.mock('scheduler', () => require('scheduler/unstable_mock'));
 
 For more info, visit https://reactjs.org/link/mock-scheduler`);
@@ -38666,7 +38666,7 @@ var require_moment = __commonJS({
       function shiftWeekdays(ws, n3) {
         return ws.slice(n3, 7).concat(ws.slice(0, n3));
       }
-      var defaultLocaleWeekdays = "星期天_星期一_星期二_星期三_星期四_星期五_星期六".split("_"), defaultLocaleWeekdaysShort = "星期天_星期一_星期二_星期三_星期四_星期五_星期六".split("_"), defaultLocaleWeekdaysMin = "星期天_星期一_星期二_星期三_星期四_星期五_星期六".split("_"), defaultWeekdaysRegex = matchWord, defaultWeekdaysShortRegex = matchWord, defaultWeekdaysMinRegex = matchWord;
+      var defaultLocaleWeekdays = "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), defaultLocaleWeekdaysShort = "Sun_Mon_Tue_Wed_Thu_Fri_Sat".split("_"), defaultLocaleWeekdaysMin = "Su_Mo_Tu_We_Th_Fr_Sa".split("_"), defaultWeekdaysRegex = matchWord, defaultWeekdaysShortRegex = matchWord, defaultWeekdaysMinRegex = matchWord;
       function localeWeekdays(m3, format2) {
         var weekdays2 = isArray2(this._weekdays) ? this._weekdays : this._weekdays[m3 && m3 !== true && this._weekdays.isFormat.test(format2) ? "format" : "standalone"];
         return m3 === true ? shiftWeekdays(weekdays2, this._week.dow) : m3 ? weekdays2[m3.day()] : weekdays2;
@@ -53752,18 +53752,18 @@ function parseText(text, language) {
         MDAYs();
         F3();
         break;
-      case "一月":
-      case "二月":
-      case "三月":
-      case "四月":
-      case "五月":
-      case "六月":
-      case "七月":
-      case "八月":
-      case "九月":
-      case "十月":
-      case "十一月":
-      case "十二月":
+      case "january":
+      case "february":
+      case "march":
+      case "april":
+      case "may":
+      case "june":
+      case "july":
+      case "august":
+      case "september":
+      case "october":
+      case "november":
+      case "december":
         options.freq = RRule.YEARLY;
         options.bymonth = [decodeM()];
         if (!ttr.nextSymbol())
@@ -53861,29 +53861,29 @@ function parseText(text, language) {
   }
   function decodeM() {
     switch (ttr.symbol) {
-      case "一月":
+      case "january":
         return 1;
-      case "二月":
+      case "february":
         return 2;
-      case "三月":
+      case "march":
         return 3;
-      case "四月":
+      case "april":
         return 4;
-      case "五月":
+      case "may":
         return 5;
-      case "六月":
+      case "june":
         return 6;
-      case "七月":
+      case "july":
         return 7;
-      case "八月":
+      case "august":
         return 8;
-      case "九月":
+      case "september":
         return 9;
-      case "十月":
+      case "october":
         return 10;
-      case "十一月":
+      case "november":
         return 11;
-      case "十二月":
+      case "december":
         return 12;
       default:
         return false;
@@ -53891,13 +53891,13 @@ function parseText(text, language) {
   }
   function decodeWKD() {
     switch (ttr.symbol) {
-      case "星期一":
-      case "星期二":
-      case "星期三":
-      case "星期四":
-      case "星期五":
-      case "星期六":
-      case "星期天":
+      case "monday":
+      case "tuesday":
+      case "wednesday":
+      case "thursday":
+      case "friday":
+      case "saturday":
+      case "sunday":
         return ttr.symbol.substr(0, 2).toUpperCase();
       default:
         return false;
@@ -58948,7 +58948,7 @@ var weekdaysLong = [
   "星期六",
   "星期天"
 ];
-var weekdaysShort = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期天"];
+var weekdaysShort = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 var weekdaysNarrow = ["M", "T", "W", "T", "F", "S", "S"];
 function weekdays(length) {
   switch (length) {
@@ -58994,25 +58994,25 @@ function eraForDateTime(dt, length) {
 }
 function formatRelativeTime(unit, count, numeric = "always", narrow = false) {
   const units = {
-    years: ["年", "yr."],
-    quarters: ["季", "qtr."],
-    months: ["月", "mo."],
-    weeks: ["周", "wk."],
-    days: ["天", "day", "days"],
-    hours: ["时", "hr."],
-    minutes: ["分", "min."],
-    seconds: ["秒", "sec."]
+    years: ["year", "yr."],
+    quarters: ["quarter", "qtr."],
+    months: ["month", "mo."],
+    weeks: ["week", "wk."],
+    days: ["day", "day", "days"],
+    hours: ["hour", "hr."],
+    minutes: ["minute", "min."],
+    seconds: ["second", "sec."]
   };
-  const lastable = ["时", "分", "秒"].indexOf(unit) === -1;
+  const lastable = ["hours", "minutes", "seconds"].indexOf(unit) === -1;
   if (numeric === "auto" && lastable) {
     const isDay = unit === "days";
     switch (count) {
       case 1:
-        return isDay ? "明天" : `next ${units[unit][0]}`;
+        return isDay ? "tomorrow" : `next ${units[unit][0]}`;
       case -1:
-        return isDay ? "昨天" : `last ${units[unit][0]}`;
+        return isDay ? "yesterday" : `last ${units[unit][0]}`;
       case 0:
-        return isDay ? "今天" : `this ${units[unit][0]}`;
+        return isDay ? "today" : `this ${units[unit][0]}`;
       default:
     }
   }
@@ -59264,19 +59264,19 @@ var Formatter = class {
         case "S":
           return "millisecond";
         case "s":
-          return "秒";
+          return "second";
         case "m":
-          return "分";
+          return "minute";
         case "h":
-          return "时";
+          return "hour";
         case "d":
-          return "天";
+          return "day";
         case "w":
-          return "周";
+          return "week";
         case "M":
-          return "月";
+          return "month";
         case "y":
-          return "年";
+          return "year";
         default:
           return null;
       }
@@ -62675,7 +62675,7 @@ function HeadingSetting({
   return /* @__PURE__ */ React.createElement("div", {
     className: "setting-item-control",
     style: { display: "block", textAlign: "center" }
-  }, /* @__PURE__ */ React.createElement("span", null, "Under heading"), " ", /* @__PURE__ */ React.createElement("input", {
+  }, /* @__PURE__ */ React.createElement("span", null, "在日常笔记的"), " ", /* @__PURE__ */ React.createElement("input", {
     disabled: true,
     type: "text",
     value: sourceWithHeading.heading,
@@ -62685,7 +62685,7 @@ function HeadingSetting({
     }
   }), " ", /* @__PURE__ */ React.createElement("span", {
     style: { paddingRight: ".5rem" }
-  }, "in daily notes"));
+  }, "标题下"));
 }
 function UrlSetting({
   source
@@ -62802,7 +62802,7 @@ var CalendarSettings = class extends React.Component {
     }, this.state.dirty && /* @__PURE__ */ React.createElement("button", {
       onClick: () => {
         if (this.state.sources.filter((s4) => s4.type === "dailynote").length > 1) {
-          new import_obsidian.Notice("Only one daily note calendar is allowed.");
+          new import_obsidian.Notice("只允许一个每日笔记.");
           return;
         }
         this.props.submit(this.state.sources.map((elt) => elt));
@@ -62812,7 +62812,7 @@ var CalendarSettings = class extends React.Component {
         backgroundColor: this.state.dirty ? "var(--interactive-accent)" : void 0,
         color: this.state.dirty ? "var(--text-on-accent)" : void 0
       }
-    }, this.state.dirty ? "Save" : "Settings Saved")));
+    }, this.state.dirty ? "保存" : "Settings Saved")));
   }
 };
 
@@ -62885,9 +62885,9 @@ function UrlInput({
     className: "setting-item-info"
   }, /* @__PURE__ */ React2.createElement("div", {
     className: "setting-item-name"
-  }, "Url"), /* @__PURE__ */ React2.createElement("div", {
+  }, "URL"), /* @__PURE__ */ React2.createElement("div", {
     className: "setting-item-description"
-  }, "Url of the server")), /* @__PURE__ */ React2.createElement("div", {
+  }, "服务器的URL")), /* @__PURE__ */ React2.createElement("div", {
     className: "setting-item-control"
   }, /* @__PURE__ */ React2.createElement("input", {
     required: true,
@@ -62909,9 +62909,9 @@ function UsernameInput({
     className: "setting-item-info"
   }, /* @__PURE__ */ React2.createElement("div", {
     className: "setting-item-name"
-  }, "Username"), /* @__PURE__ */ React2.createElement("div", {
+  }, "用户名"), /* @__PURE__ */ React2.createElement("div", {
     className: "setting-item-description"
-  }, "Username for the account")), /* @__PURE__ */ React2.createElement("div", {
+  }, "账号的用户名")), /* @__PURE__ */ React2.createElement("div", {
     className: "setting-item-control"
   }, /* @__PURE__ */ React2.createElement("input", {
     required: true,
@@ -62934,9 +62934,9 @@ function HeadingInput({
     className: "setting-item-info"
   }, /* @__PURE__ */ React2.createElement("div", {
     className: "setting-item-name"
-  }, "Heading"), /* @__PURE__ */ React2.createElement("div", {
+  }, "标题"), /* @__PURE__ */ React2.createElement("div", {
     className: "setting-item-description"
-  }, "Heading to store events under in the daily note.")), /* @__PURE__ */ React2.createElement("div", {
+  }, "前往每日笔记中的存储事件.")), /* @__PURE__ */ React2.createElement("div", {
     className: "setting-item-control"
   }, headings.length > 0 ? /* @__PURE__ */ React2.createElement("select", {
     required: true,
@@ -62971,9 +62971,9 @@ function PasswordInput({
     className: "setting-item-info"
   }, /* @__PURE__ */ React2.createElement("div", {
     className: "setting-item-name"
-  }, "Password"), /* @__PURE__ */ React2.createElement("div", {
+  }, "密码"), /* @__PURE__ */ React2.createElement("div", {
     className: "setting-item-description"
-  }, "Password for the account")), /* @__PURE__ */ React2.createElement("div", {
+  }, "账号的密码")), /* @__PURE__ */ React2.createElement("div", {
     className: "setting-item-control"
   }, /* @__PURE__ */ React2.createElement("input", {
     required: true,
@@ -62993,7 +62993,7 @@ var AddCalendarSource = ({
   const isCalDAV = source.type === "caldav" || source.type === "icloud";
   const [setting, setSettingState] = (0, import_react.useState)(source);
   const [submitting, setSubmitingState] = (0, import_react.useState)(false);
-  const [submitText, setSubmitText] = (0, import_react.useState)(isCalDAV ? "Import Calendars" : "添加日历");
+  const [submitText, setSubmitText] = (0, import_react.useState)(isCalDAV ? "导入日历" : "添加日历");
   function makeChangeListener2(fromString) {
     return (e3) => setSettingState(fromString(e3.target.value));
   }
@@ -63001,7 +63001,7 @@ var AddCalendarSource = ({
     e3.preventDefault();
     if (!submitting) {
       setSubmitingState(true);
-      setSubmitText(isCalDAV ? "Importing Calendars" : "Adding Calendar");
+      setSubmitText(isCalDAV ? "导入日历" : "Adding Calendar");
       yield submit(setting);
     }
   });
@@ -63214,10 +63214,10 @@ function addCalendarButton(app, plugin, containerEl, submitCallback, listUsedDir
   let dropdown;
   const directories = app.vault.getAllLoadedFiles().filter((f3) => f3 instanceof import_obsidian4.TFolder).map((f3) => f3.path);
   return new import_obsidian4.Setting(containerEl).setName("日历").setDesc("添加日历").addDropdown((d2) => dropdown = d2.addOptions({
-    local: "全文注释",
+    local: "详细笔记",
     dailynote: "日常笔记",
-    icloud: "云",
-    caldav: "日历",
+    icloud: "iCloud",
+    caldav: "calDAV",
     ical: "远程（.ics格式）"
   })).addExtraButton((button) => {
     button.setTooltip("添加日历");
@@ -63340,8 +63340,8 @@ function renderOnboarding(app, plugin, el) {
   nocal.style.alignItems = "center";
   nocal.style.justifyContent = "center";
   const notice = nocal.createDiv();
-  notice.createEl("h1").textContent = "No calendar available";
-  notice.createEl("p").textContent = "Thanks for downloading Full Calendar! Create a calendar below to begin.";
+  notice.createEl("h1").textContent = "没有可用的日历";
+  notice.createEl("p").textContent = "感谢下载 Full Calendar！在下面创建一个日历开始使用.";
   const container = notice.createDiv();
   container.style.position = "fixed";
   addCalendarButton(app, plugin, container, (source) => __async(this, null, function* () {
@@ -63429,13 +63429,13 @@ var DayChoice = ({ code, label, isSelected, onClick }) => /* @__PURE__ */ React3
   onClick: () => onClick(code)
 }, /* @__PURE__ */ React3.createElement("b", null, label[0]));
 var DAY_MAP = {
-  U: "星期天",
-  M: "星期一",
-  T: "星期二",
-  W: "星期三",
-  R: "星期四",
-  F: "星期五",
-  S: "星期六"
+  U: "天",
+  M: "一",
+  T: "二",
+  W: "三",
+  R: "四",
+  F: "五",
+  S: "六"
 };
 var DaySelect = ({
   value: days,
@@ -63517,7 +63517,7 @@ var EditEvent = ({
     key: idx,
     value: idx,
     disabled: !((initialEvent == null ? void 0 : initialEvent.title) === void 0 || calendars[calendarIndex].type === cal.type)
-  }, cal.type === "local" ? cal.name : "Daily Note")))), /* @__PURE__ */ React3.createElement("p", null, !isRecurring && /* @__PURE__ */ React3.createElement("input", {
+  }, cal.type === "local" ? cal.name : "每日日历")))), /* @__PURE__ */ React3.createElement("p", null, !isRecurring && /* @__PURE__ */ React3.createElement("input", {
     type: "date",
     id: "date",
     value: date,
@@ -63537,7 +63537,7 @@ var EditEvent = ({
     onChange: makeChangeListener(setEndTime, (x3) => x3)
   }))), /* @__PURE__ */ React3.createElement("p", null, /* @__PURE__ */ React3.createElement("label", {
     htmlFor: "allDay"
-  }, "每天任务 "), /* @__PURE__ */ React3.createElement("input", {
+  }, "全天任务 "), /* @__PURE__ */ React3.createElement("input", {
     id: "allDay",
     checked: allDay,
     onChange: (e3) => setAllDay(e3.target.checked),
@@ -63619,7 +63619,7 @@ function launchCreateModal(plugin, partialEvent) {
           yield plugin.cache.addEvent(calendarId, data);
         } catch (e3) {
           if (e3 instanceof Error) {
-            new import_obsidian6.Notice("Error when creating event: " + e3.message);
+            new import_obsidian6.Notice("创建事件时出现错误: " + e3.message);
             console.error(e3);
           }
         }
@@ -63833,7 +63833,7 @@ var CalendarView = class extends import_obsidian7.ItemView {
           }
           if (this.plugin.cache.isEventEditable(e3.id)) {
             if (!isTask(event)) {
-              menu.addItem((item) => item.setTitle("").onClick(() => __async(this, null, function* () {
+              menu.addItem((item) => item.setTitle("Turn into task").onClick(() => __async(this, null, function* () {
                 yield this.plugin.cache.processEvent(e3.id, (e4) => toggleTask(e4, false));
               })));
             } else {
@@ -65383,7 +65383,7 @@ var FullCalendarPlugin = class extends import_obsidian12.Plugin {
   }
   saveSettings() {
     return __async(this, null, function* () {
-      new import_obsidian12.Notice("Resetting the event cache with new settings...");
+      new import_obsidian12.Notice("重置事件缓存并使用新设置...");
       yield this.saveData(this.settings);
       this.cache.reset(this.settings.calendarSources);
       yield this.cache.populate();
