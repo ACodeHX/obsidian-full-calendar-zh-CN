@@ -63499,7 +63499,7 @@ var EditEvent = ({
     style: { float: "right" }
   }, open && /* @__PURE__ */ React3.createElement("button", {
     onClick: open
-  }, "Open Note"))), /* @__PURE__ */ React3.createElement("form", {
+  }, "打开笔记"))), /* @__PURE__ */ React3.createElement("form", {
     onSubmit: handleSubmit
   }, /* @__PURE__ */ React3.createElement("p", null, /* @__PURE__ */ React3.createElement("input", {
     ref: titleRef,
@@ -63573,7 +63573,7 @@ var EditEvent = ({
     type: "checkbox"
   })), isTask2 && /* @__PURE__ */ React3.createElement(React3.Fragment, null, /* @__PURE__ */ React3.createElement("label", {
     htmlFor: "taskStatus"
-  }, "完成? "), /* @__PURE__ */ React3.createElement("input", {
+  }, "事件是否完成? "), /* @__PURE__ */ React3.createElement("input", {
     id: "taskStatus",
     checked: !(complete === false || complete === void 0),
     onChange: (e3) => setComplete(e3.target.checked ? DateTime2.now().toISO() : false),
@@ -63596,7 +63596,7 @@ var EditEvent = ({
       borderStyle: "solid"
     },
     onClick: deleteEvent
-  }, "Delete Event")))));
+  }, "删除事件")))));
 };
 
 // src/ui/event_modal.ts
