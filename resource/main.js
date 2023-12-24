@@ -63833,22 +63833,22 @@ var CalendarView = class extends import_obsidian7.ItemView {
           }
           if (this.plugin.cache.isEventEditable(e3.id)) {
             if (!isTask(event)) {
-              menu.addItem((item) => item.setTitle("Turn into task").onClick(() => __async(this, null, function* () {
+              menu.addItem((item) => item.setTitle("变成任务事件").onClick(() => __async(this, null, function* () {
                 yield this.plugin.cache.processEvent(e3.id, (e4) => toggleTask(e4, false));
               })));
             } else {
-              menu.addItem((item) => item.setTitle("Remove checkbox").onClick(() => __async(this, null, function* () {
+              menu.addItem((item) => item.setTitle("移除任务事件").onClick(() => __async(this, null, function* () {
                 yield this.plugin.cache.processEvent(e3.id, unmakeTask);
               })));
             }
             menu.addSeparator();
-            menu.addItem((item) => item.setTitle("Go to note").onClick(() => {
+            menu.addItem((item) => item.setTitle("前往笔记").onClick(() => {
               if (!this.plugin.cache) {
                 return;
               }
               openFileForEvent(this.plugin.cache, this.app, e3.id);
             }));
-            menu.addItem((item) => item.setTitle("Delete").onClick(() => __async(this, null, function* () {
+            menu.addItem((item) => item.setTitle("删除").onClick(() => __async(this, null, function* () {
               if (!this.plugin.cache) {
                 return;
               }
