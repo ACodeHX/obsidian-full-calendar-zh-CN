@@ -14,4 +14,4 @@
 
 下载`Releases`然后将其中文件`obsidian-full-calendar_zh_CN.zip` 解压到 **你的笔记目录/.obsidian/plugins/**
 
-或者下载`main.js,manifest.json`到/.obsidian/plugins/
+或者下载`main.js,manifest.json`到/.obsidian/plugins/的目录里
