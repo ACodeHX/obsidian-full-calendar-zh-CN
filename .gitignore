@@ -25,3 +25,7 @@ data.json
 .obsidian
 
 .DS_Store
+
+# git
+.gitignore
+.gitattributes
