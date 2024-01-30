@@ -1,4 +1,4 @@
-[View English Version](./README.zh.md)
+
 
 # Plugin Architecture
 
