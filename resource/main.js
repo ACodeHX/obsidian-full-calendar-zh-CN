@@ -26824,13 +26824,13 @@ var require_main = __commonJS({
       const { moment: moment2 } = window;
       let weekStart = moment2.localeData()._week.dow;
       const daysOfWeek = [
-        "星期天",
-        "星期一",
-        "星期二",
-        "星期三",
-        "星期四",
-        "星期五",
-        "星期六"
+        "sunday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
       ];
       while (weekStart) {
         daysOfWeek.push(daysOfWeek.shift());
@@ -42369,7 +42369,7 @@ function computeSmallestCellWidth(cellEl) {
   }
   return cellEl.getBoundingClientRect().width - allWidthEl.getBoundingClientRect().width + contentWidthEl.getBoundingClientRect().width;
 }
-var DAY_IDS = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+var DAY_IDS = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
 function addWeeks(m3, n3) {
   var a3 = dateToUtcArray(m3);
   a3[2] += n3 * 7;
@@ -53202,27 +53202,27 @@ var callbackiterresult_default = CallbackIterResult;
 // node_modules/rrule/dist/esm/nlp/i18n.js
 var ENGLISH = {
   dayNames: [
-    "星期天",
-    "星期一",
-    "星期二",
-    "星期三",
-    "星期四",
-    "星期五",
-    "星期六"
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
   ],
   monthNames: [
-    "一月",
-    "二月",
-    "三月",
-    "四月",
-    "五月",
-    "六月",
-    "七月",
-    "八月",
-    "九月",
-    "十月",
-    "十一月",
-    "十二月"
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
   ],
   tokens: {
     SKIP: /^[ \r\n\t]+|^\.$/,
@@ -53727,13 +53727,13 @@ function parseText(text, language) {
           F3();
         }
         break;
-      case "星期一":
-      case "星期二":
-      case "星期三":
-      case "星期四":
-      case "星期五":
-      case "星期六":
-      case "星期天":
+      case "monday":
+      case "tuesday":
+      case "wednesday":
+      case "thursday":
+      case "friday":
+      case "saturday":
+      case "sunday":
         options.freq = RRule.WEEKLY;
         var key = ttr.symbol.substr(0, 2).toUpperCase();
         options.byweekday = [RRule[key]];
@@ -58895,32 +58895,32 @@ var ianaRegex = /[A-Za-z_+-]{1,256}(?::?\/[A-Za-z0-9_+-]{1,256}(?:\/[A-Za-z0-9_+
 
 // node_modules/luxon/src/impl/english.js
 var monthsLong = [
-  "一月",
-  "二月",
-  "三月",
-  "四月",
-  "五月",
-  "六月",
-  "七月",
-  "八月",
-  "九月",
-  "十月",
-  "十一月",
-  "十二月"
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
 ];
 var monthsShort = [
-  "一月",
-  "二月",
-  "三月",
-  "四月",
-  "五月",
-  "六月",
-  "七月",
-  "八月",
-  "九月",
-  "十月",
-  "十一月",
-  "十二月"
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec"
 ];
 var monthsNarrow = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
 function months(length) {
@@ -58940,13 +58940,13 @@ function months(length) {
   }
 }
 var weekdaysLong = [
-  "星期一",
-  "星期二",
-  "星期三",
-  "星期四",
-  "星期五",
-  "星期六",
-  "星期天"
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday"
 ];
 var weekdaysShort = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 var weekdaysNarrow = ["M", "T", "W", "T", "F", "S", "S"];
@@ -63189,13 +63189,13 @@ var DEFAULT_SETTINGS = {
   timeFormat24h: false
 };
 var WEEKDAYS = [
-  "星期天",
-  "星期一",
-  "星期二",
-  "星期三",
-  "星期四",
-  "星期五",
-  "星期六"
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
 ];
 var INITIAL_VIEW_OPTIONS = {
   DESKTOP: {
