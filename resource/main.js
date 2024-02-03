@@ -63856,7 +63856,7 @@ var CalendarView = class extends import_obsidian7.ItemView {
                 return;
               }
               yield this.plugin.cache.deleteEvent(e3.id);
-              new import_obsidian7.Notice(`Deleted event "${e3.title}".`);
+              new import_obsidian7.Notice(`删除事件 "${e3.title}".`);
             })));
           } else {
             menu.addItem((item) => {
