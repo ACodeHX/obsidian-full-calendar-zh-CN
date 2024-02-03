@@ -24943,7 +24943,7 @@ var require_react_dom_development = __commonJS({
             if (didWarnAboutUnmockedScheduler === false && Scheduler.unstable_flushAllWithoutAsserting === void 0) {
               if (fiber.mode & BlockingMode || fiber.mode & ConcurrentMode) {
                 didWarnAboutUnmockedScheduler = true;
-                error(`In Concurrent or Sync modes, the "scheduler" module needs to be mocked to guarantee consistent behaviour across tests and browsers. For example, with jest: 
+                error(`In Concurrent or Sync modes, the "scheduler" module needs to be mocked to guarantee consistent behaviour across tests and browsers. For example, with jest:
 jest.mock('scheduler', () => require('scheduler/unstable_mock'));
 
 For more info, visit https://reactjs.org/link/mock-scheduler`);
@@ -63188,14 +63188,15 @@ var DEFAULT_SETTINGS = {
   },
   timeFormat24h: false
 };
+//日历选项中选择一周的起始日的星期的翻译
 var WEEKDAYS = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
+  "周日",
+  "周一",
+  "周二",
+  "周三",
+  "周四",
+  "周五",
+  "周六"
 ];
 var INITIAL_VIEW_OPTIONS = {
   DESKTOP: {
@@ -63272,11 +63273,12 @@ var FullCalendarSettingTab = class extends import_obsidian4.PluginSettingTab {
     super(app, plugin);
     this.plugin = plugin;
   }
+  //日历选项的翻译
   display() {
     return __async(this, null, function* () {
       const { containerEl } = this;
       containerEl.empty();
-      containerEl.createEl("h2", { text: "日历设置" });
+      containerEl.createEl("h2", { text: "日历选项" });
       new import_obsidian4.Setting(containerEl).setName("桌面初始视图").setDesc("在桌面设备上选择初始视图范围.").addDropdown((dropdown) => {
         Object.entries(INITIAL_VIEW_OPTIONS.DESKTOP).forEach(([value, display]) => {
           dropdown.addOption(value, display);
@@ -63297,7 +63299,7 @@ var FullCalendarSettingTab = class extends import_obsidian4.PluginSettingTab {
           yield this.plugin.saveSettings();
         }));
       });
-      new import_obsidian4.Setting(containerEl).setName("一个星期的开启").setDesc("选择一天作为一周的开始.").addDropdown((dropdown) => {
+      new import_obsidian4.Setting(containerEl).setName("一周的起始日").setDesc("选择一天作为一周的开始.").addDropdown((dropdown) => {
         WEEKDAYS.forEach((day, code) => {
           dropdown.addOption(code.toString(), day);
         });
@@ -63428,6 +63430,7 @@ var DayChoice = ({ code, label, isSelected, onClick }) => /* @__PURE__ */ React3
   },
   onClick: () => onClick(code)
 }, /* @__PURE__ */ React3.createElement("b", null, label[0]));
+//重复任务的星期翻译
 var DAY_MAP = {
   U: "天",
   M: "一",
