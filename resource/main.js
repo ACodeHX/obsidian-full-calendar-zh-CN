@@ -64171,7 +64171,7 @@ var basenameFromEvent = (event) => {
     case "single":
       return `${event.date} ${event.title}`;
     case "recurring":
-      return `(Every ${event.daysOfWeek.join(",")}) ${event.title}`;
+      return `${event.title}(Every${event.daysOfWeek.join(",")})`;
     case "rrule":
       return `(${rrulestr(event.rrule).toText()}) ${event.title}`;
   }
