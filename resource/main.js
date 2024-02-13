@@ -65319,10 +65319,11 @@ var FullCalendarPlugin = class extends import_obsidian12.Plugin {
           this.cache.deleteEventsAtPath(file.path);
         }
       }));
+      //open full calendar 的汉化
       window.cache = this.cache;
       this.registerView(FULL_CALENDAR_VIEW_TYPE, (leaf) => new CalendarView(leaf, this, false));
       this.registerView(FULL_CALENDAR_SIDEBAR_VIEW_TYPE, (leaf) => new CalendarView(leaf, this, true));
-      this.addRibbonIcon("calendar-glyph", "Open Full Calendar", (_3) => __async(this, null, function* () {
+      this.addRibbonIcon("calendar-glyph", "打开全日历", (_3) => __async(this, null, function* () {
         yield this.activateView();
       }));
       this.addSettingTab(new FullCalendarSettingTab(this.app, this));
