@@ -16,5 +16,11 @@
 
 或者下载`main.js,manifest.json`到/.obsidian/plugins/的目录里
 
+### 部分汉化展示
+![obsidian-calendar](https://github.com/ACodeHX/obsidian-full-calendar-zh-CN/assets/127362983/7f35d8ee-760b-4e3a-b48b-295b26950b0a)
+
+![obsidian-calendar-event](https://github.com/ACodeHX/obsidian-full-calendar-zh-CN/assets/127362983/d9dc117f-89ec-41cb-8bf3-cb414b4c85f3)
+
 ### 说明
 >年份和月份还未完成汉化
+
