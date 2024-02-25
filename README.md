@@ -1,4 +1,4 @@
-<center><h2>Obsidian Full Calendar Plugin 汉化</h2></center>
+<h2 align="center">Obsidian Full Calendar Plugin 汉化</h2>
 
 ### 原项目地址
 
